@@ -36,7 +36,7 @@ public class ContaCorrente {
         System.out.println("\t Saldo atual conta corrente: R$ " + this.getSaldoAtualContaCorrente());
     }
 
-    /* metodo scar conta corrente*/    public void sacarContaCorrente() {
+    /* metodo sacar conta corrente*/    public void sacarContaCorrente() {
         System.out.println("\t Saldo atual conta corrente: R$ " + this.getSaldoAtualContaCorrente());
         System.out.println("\t Quanto sacar da conta corrente: R$");
 
