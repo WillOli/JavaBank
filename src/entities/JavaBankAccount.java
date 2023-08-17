@@ -6,6 +6,7 @@ public class JavaBankAccount {
     ContaCorrente contaCorrente;
     ContaPoupanca contaPoupanca;
     Pessoa pessoa;
+    Cliente cliente;
 
     private int Agencia = 42;
 
@@ -15,11 +16,11 @@ public class JavaBankAccount {
 
         do {
             System.out.println("\n\t Operações:");
-            System.out.println("\t Digite [] --> Ver extrato");
-            System.out.println("\t Digite [] --> Mudar algum dado da conta.");
-            System.out.println("\t Digite [] --> Operações de depositos.");
-            System.out.println("\t Digite [] --> Operações de saques.");
-            System.out.println("\t Digite [] --> Encerrar sessão no JavaBank");
+            System.out.println("\t Digite [1] --> Ver extrato");
+            System.out.println("\t Digite [2] --> Mudar algum dado da conta.");
+            System.out.println("\t Digite [3] --> Operações de depositos.");
+            System.out.println("\t Digite [4] --> Operações de saques.");
+            System.out.println("\t Digite [0] --> Encerrar sessão no JavaBank");
             System.out.print("\t Opção: ");
 
             int operacaoJavaBank = input.nextInt();
@@ -28,7 +29,7 @@ public class JavaBankAccount {
                 this.getExtrato();
             }
             else if ( operacaoJavaBank == 2) {
-                this.MudarDados();
+                cliente.MudarDados();
             }
             else if ( operacaoJavaBank == 3) {
                 this.Depositos();
@@ -44,45 +45,6 @@ public class JavaBankAccount {
             }
 
         }while(true);
-    }
-    public void MudarDados() {
-        int operacaoMudarDados = 1;
-
-        do {
-            System.out.println("\t Mudar dados da conta:");
-            System.out.println("\t Digite [1] --> Mudar nome do cliente.");
-            System.out.println("\t Digite [2] --> Mudar idade do cliente.");
-            System.out.println("\t Digite [3] --> Mudar RG do cliente.");
-            System.out.println("\t Digite [4] --> Mudar CPF do cliente.");
-            System.out.println("\t Digite [5] --> Mudar nacionalidade do cliente.");
-            System.out.println("\t Digite [6] --> Mudade cidade do cliente.");
-            System.out.println("\t Digite [0] --> Voltar menu Principal.");
-            System.out.println("\t Opção:");
-
-            operacaoMudarDados = input.nextInt();
-
-            if (operacaoMudarDados == 1) {
-                this.mudarNomeCliente();
-            }
-            else if ( operacaoMudarDados == 2) {
-                this.mudarIdadeCliente;
-            }
-            else if ( operacaoMudarDados == 3) {
-                this.mudarRGCliente;
-            }
-            else if ( operacaoMudarDados == 4) {
-                this.mudarCPFCliente;
-            }
-            else if ( operacaoMudarDados == 5) {
-                this.mudarNacionalidadeCliente;
-            }
-            else if ( operacaoMudarDados == 6) {
-                this.mudarCidadeCliente;
-            }
-            else {
-                System.out.println("\n\t Digite uma operação de mudança de dados válidade!");
-            }
-        }while( operacaoMudarDados !=0);
     }
 
     public void Depositos() {
