@@ -67,7 +67,7 @@ public class ContaPoupanca {
         return SaldoAtualContaPoupanca;
     }
 
-    public double getTotalSaquesContaPoupança() {
+    public double getTotalSaquesContaPoupanca() {
         return totalSaquesContaPoupanca;
     }
 
