@@ -55,14 +55,11 @@ public class ContaPoupanca {
             this.totalSaquesContaPoupanca += retiraContaPoupanca;
             this.totalSacadoGeral += retiraContaPoupanca;
             System.out.println("\n\t Saldo atual conta poupança: R$ " + this.getSaldoAtualContaPoupanca());
-
         }
         else {
             System.out.println("\n\t Você não possui esse saldo para sque na conta poupança no momento!");
         }
     }
-
-
     public double getSaldoAtualContaPoupanca() {
         return SaldoAtualContaPoupanca;
     }

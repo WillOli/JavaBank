@@ -15,6 +15,20 @@ public class Cliente {
 
     Pessoa pessoa;
 
+    public Cliente(String nomecliente, int idadeCliente, char sexoCliente, double RGCliente, double CPFCliente, String nacionalidadeCliente, String cidadeCliente) {
+        this.nomecliente = nomecliente;
+        this.idadeCliente = idadeCliente;
+        this.sexoCliente = sexoCliente;
+        this.RGCliente = RGCliente;
+        this.CPFCliente = CPFCliente;
+        this.nacionalidadeCliente = nacionalidadeCliente;
+        this.cidadeCliente = cidadeCliente;
+    }
+
+    public Cliente() {
+
+    }
+
     public void MudarDados() {
         int operacaoMudarDados = 1;
 
@@ -80,7 +94,7 @@ public class Cliente {
     }
     public void mudarNacionalidadeCliente() {
         System.out.println("\n\t Digite a nova nacionadalide do cliente: ");
-        int novaNacionalidadeCliente = input.nextInt();
+        String novaNacionalidadeCliente = input.nextLine();
         this.setNacionalidadeCliente(String.valueOf(novaNacionalidadeCliente));
     }
 
@@ -88,6 +102,12 @@ public class Cliente {
         System.out.println("\n\t Digite a nova cidade do cliente: ");
         int novaCidadeCliente = input.nextInt();
         this.setIdadeCliente( novaCidadeCliente );
+    }
+
+
+
+    public String getNomecliente() {
+        return this.nomecliente;
     }
 
     public void setNomecliente(String nomecliente) {

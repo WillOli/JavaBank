@@ -11,8 +11,16 @@ public class JavaBankAccount {
     private int Agencia = 42;
 
     Scanner input = new Scanner(System.in);
+
+    public JavaBankAccount(Cliente newCliente) {
+        this.cliente = newCliente;
+        contaCorrente = new ContaCorrente();
+        contaPoupanca = new ContaPoupanca();
+    }
+
+
     public void start() {
-        System.out.println("\n\t ...Bem vindo ao Java Bank, " + pessoa.getNomePessoa());
+        System.out.println("\n\t ...Bem vindo ao Java Bank, " + cliente.getNomecliente());
 
         do {
             System.out.println("\n\t Operações:");
@@ -47,6 +55,31 @@ public class JavaBankAccount {
         }while(true);
     }
 
+    public void Saques() {
+        do {
+            System.out.println("\n\t Operações de saques:");
+            System.out.println("\t Digite [1] --> Sacar dinheiro da conta corrente.");
+            System.out.println("\t Digite [2] --> Sacar dinhero da conta poupança.");
+            System.out.println("\t Digite [0] --> Voltar menu principal.");
+            System.out.println("\t Opção: ");
+
+            int operacaoSaque = input.nextInt();
+
+            if ( operacaoSaque == 1) {
+                contaCorrente.sacarContaCorrente();
+            }
+            else if ( operacaoSaque == 2) {
+                contaPoupanca.sacarContaPoupanca();
+            }
+            else if ( operacaoSaque == 0) {
+                break;
+            }
+            else {
+                System.out.println("\n\t Digie uma operação de saque válida!");
+            }
+        }while(true);
+    }
+
     public void Depositos() {
         do {
             System.out.println("\n\t Operações de Depositos");
@@ -58,10 +91,10 @@ public class JavaBankAccount {
             int operacaoDeposito = input.nextInt();
 
             if ( operacaoDeposito == 1) {
-                this.depositarContaCorrente();
+                contaCorrente.depositarContaCorrente();
             }
             else if ( operacaoDeposito == 2) {
-                this.depositarContaPoupanca;
+                contaPoupanca.depositarContaPoupanca();
             }
             else if ( operacaoDeposito == 0) {
                 break;
@@ -74,7 +107,7 @@ public class JavaBankAccount {
 
     /* metodo imprime extrato dos dados da conta */
     public void getExtrato() {
-        System.out.print("\n\t Olá, " + pessoa.getNomePessoa());
+        System.out.print("\n\t Olá, " + cliente.getNomecliente());
         System.out.print("\n\t  Extrato atual da conta... ");
         System.out.print("\n\t Agencia: " + this.getAgencia());
         System.out.print("\n\t Saldo conta corrente: R$" + contaCorrente.getSaldoAtualContaCorrente());
