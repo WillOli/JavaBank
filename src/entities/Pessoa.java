@@ -44,12 +44,8 @@ public class Pessoa {
         System.out.print("\t Digite sua Cidade de Origem: ");
         input.nextLine();
         String cidadePessoa = input.nextLine();
-        this.getCidadePessoa();
+        this.setCidadePessoa(cidadePessoa);
     }
-
-
-
-
     public Pessoa() {
 
     }

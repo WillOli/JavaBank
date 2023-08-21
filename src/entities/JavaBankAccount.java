@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class JavaBankAccount {
     ContaCorrente contaCorrente;
     ContaPoupanca contaPoupanca;
-    Pessoa pessoa;
     Cliente cliente;
 
     private int Agencia = 42;
@@ -20,7 +19,7 @@ public class JavaBankAccount {
 
 
     public void start() {
-        System.out.println("\n\t ...Bem vindo ao Java Bank, " + cliente.getNomecliente());
+        System.out.println("\n\t ...Bem vindo ao Java Bank, " + cliente.getNomeCliente());
 
         do {
             System.out.println("\n\t Operações:");
@@ -107,7 +106,7 @@ public class JavaBankAccount {
 
     /* metodo imprime extrato dos dados da conta */
     public void getExtrato() {
-        System.out.print("\n\t Olá, " + cliente.getNomecliente());
+        System.out.print("\n\t Olá, " + cliente.getNomeCliente());
         System.out.print("\n\t  Extrato atual da conta... ");
         System.out.print("\n\t Agencia: " + this.getAgencia());
         System.out.print("\n\t Saldo conta corrente: R$" + contaCorrente.getSaldoAtualContaCorrente());

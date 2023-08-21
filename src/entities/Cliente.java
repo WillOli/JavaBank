@@ -2,7 +2,7 @@ package entities;
 
 import java.util.Scanner;
 
-public class Cliente {
+public class Cliente extends Pessoa{
 
     Scanner input = new Scanner(System.in);
     private String nomecliente;
@@ -13,20 +13,18 @@ public class Cliente {
     private String nacionalidadeCliente;
     private String cidadeCliente;
 
-    Pessoa pessoa;
-
-    public Cliente(String nomecliente, int idadeCliente, char sexoCliente, double RGCliente, double CPFCliente, String nacionalidadeCliente, String cidadeCliente) {
-        this.nomecliente = nomecliente;
-        this.idadeCliente = idadeCliente;
-        this.sexoCliente = sexoCliente;
-        this.RGCliente = RGCliente;
-        this.CPFCliente = CPFCliente;
-        this.nacionalidadeCliente = nacionalidadeCliente;
-        this.cidadeCliente = cidadeCliente;
-    }
-
     public Cliente() {
 
+    }
+
+    public Cliente(String nomeCliente, int idadeCliente, char sexoCliente, double rgCliente, double cpfCliente, String nacionalidadeCliente, String cidadeCliente, double saldoInicialContaCorrente, double saldoInicialContaPoupança) {
+        this.nomecliente = nomeCliente;
+        this.idadeCliente = idadeCliente;
+        this.sexoCliente = sexoCliente;
+        this.RGCliente = rgCliente;
+        this.CPFCliente = cpfCliente;
+        this.nacionalidadeCliente = nacionalidadeCliente;
+        this.cidadeCliente = cidadeCliente;
     }
 
     public void MudarDados() {
@@ -100,13 +98,13 @@ public class Cliente {
 
     public void mudarCidadeCliente() {
         System.out.println("\n\t Digite a nova cidade do cliente: ");
-        int novaCidadeCliente = input.nextInt();
-        this.setIdadeCliente( novaCidadeCliente );
+        String novaCidadeCliente = input.next();
+        this.setIdadeCliente(Integer.parseInt(novaCidadeCliente));
     }
 
 
 
-    public String getNomecliente() {
+    public String getNomeCliente() {
         return this.nomecliente;
     }
 
@@ -114,24 +112,47 @@ public class Cliente {
         this.nomecliente = nomecliente;
     }
 
+    public int getIdadeCliente() {
+        return idadeCliente;
+    }
+
     public void setIdadeCliente(int idadeCliente) {
         this.idadeCliente = idadeCliente;
+    }
+
+    public char getSexoCliente() {
+        return sexoCliente;
     }
 
     public void setSexoCliente(char sexoCliente) {
         this.sexoCliente = sexoCliente;
     }
 
+    public double getRGCliente() {
+        return RGCliente;
+    }
+
     public void setRGCliente(double RGCliente) {
         this.RGCliente = RGCliente;
+    }
+    public double getCPFCliente() {
+        return CPFCliente;
     }
 
     public void setCPFCliente(double CPFCliente) {
         this.CPFCliente = CPFCliente;
     }
 
+    public String getNacionalidadeCliente() {
+        return nacionalidadeCliente;
+    }
+
     public void setNacionalidadeCliente(String nacionalidadeCliente) {
         this.nacionalidadeCliente = nacionalidadeCliente;
+    }
+
+    public String getCidadeCliente() {
+        return cidadeCliente;
     }
 
     public void setCidadeCliente(String cidadeCliente) {

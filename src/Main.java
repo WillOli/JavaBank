@@ -35,7 +35,7 @@ public class Main {
                 double saldoInicialContaCorrente = input.nextDouble();
 
                 System.out.println("\t Deposito inicial da conta poupança: ");
-                double saldoInicialContaPoupança = input.nextDouble();
+                double saldoInicialContaPoupanca = input.nextDouble();
 
                 Cliente newCliente = new Cliente(
                         nomeCliente,
@@ -44,7 +44,9 @@ public class Main {
                         RGCliente,
                         CPFCliente,
                         nacionalidadeCliente,
-                        cidadeCliente
+                        cidadeCliente,
+                        saldoInicialContaCorrente,
+                        saldoInicialContaPoupanca
                 );
 
                 JavaBankAccount NewJavaBankAccount = new JavaBankAccount(newCliente);
